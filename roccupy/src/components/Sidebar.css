@@ -1,0 +1,18 @@
+.nav-pills li a:hover {
+  background-color: #d3d2d5 !important;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  box-shadow: 2px 2px 2px lightgray;
+  color: #bab9b7 !important;
+}
+.nav-pills i a:hover {
+  color: #404040 !important;
+}
+:root {
+  --main-bg-color: #f0f0ef !important;
+}
+.main-bg-color {
+  background-color: var(--main-bg-color) !important;
+}
+.container-fluid {
+  background-color: var(--main-bg-color) !important;
+}

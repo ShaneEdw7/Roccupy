@@ -1,8 +1,18 @@
 import "./App.css";
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Dashboard, Login } from "./pages";
 
 const App = () => {
-  return <div>Roccupy</div>;
+  return (
+    <BrowserRouter>
+      <div>
+        <Login />
+      </div>
+      <Routes>
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
