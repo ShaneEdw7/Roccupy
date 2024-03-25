@@ -11,9 +11,11 @@ const Login = () => {
         Password
         <input type='password' name='Password' id='Password' />
         <br />
-        <Link to='/Dashboard'>
-          <span>Login</span>
-        </Link>
+        <button className='btn btn-primary '>
+          <Link to='/Dashboard'>
+            <span>Login</span>
+          </Link>
+        </button>
       </p>
     </div>
   );
