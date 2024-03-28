@@ -1,14 +1,14 @@
-import { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+// import { useEffect } from "react";
+import { Outlet /*useNavigate*/ } from "react-router-dom";
 
 const IndexPage = () => {
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!localStorage.getItem("loggedInUser")) {
-      navigate("/login");
-    }
-  }, []);
+  //     useEffect(() => {
+  //       if (!localStorage.getItem("loggedInUser")) {
+  //         navigate("/IndexPage");
+  //       }
+  //     }, []);
 
   return (
     <div>

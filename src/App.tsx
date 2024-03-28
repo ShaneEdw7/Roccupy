@@ -17,6 +17,10 @@ const App = () => {
           path: "properties",
           element: <div>Properties</div>,
         },
+        {
+          path: "index",
+          element: <IndexPage />,
+        },
       ],
     },
     {

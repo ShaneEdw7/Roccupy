@@ -1,0 +1,36 @@
+/* - Tailwind
+
+{ 'anti-flash_white': { DEFAULT: '#EFEFF0', 100: '#2f2f31', 200: '#5d5d63', 300: '#8c8c93', 400: '#bebec2', 500: '#efeff0', 600: '#f2f2f3', 700: '#f6f6f6', 800: '#f9f9f9', 900: '#fcfcfc' }, 'dim_gray': { DEFAULT: '#686963', 100: '#151514', 200: '#2a2a28', 300: '#3e3f3b', 400: '#53544f', 500: '#686963', 600: '#878881', 700: '#a5a6a0', 800: '#c3c4c0', 900: '#e1e1df' }, 'delft_blue': { DEFAULT: '#1D2F6F', 100: '#060916', 200: '#0b122c', 300: '#111b42', 400: '#172558', 500: '#1d2f6f', 600: '#2b47a9', 700: '#4d6ad1', 800: '#899ce0', 900: '#c4cdf0' }, 'non_photo_blue': { DEFAULT: '#A8DADC', 100: '#163637', 200: '#2c6d6f', 300: '#42a3a6', 400: '#70c3c6', 500: '#a8dadc', 600: '#b9e2e3', 700: '#cae9ea', 800: '#dcf0f1', 900: '#edf8f8' }, 'sea_green': { DEFAULT: '#40916C', 100: '#0d1d16', 200: '#1a3a2b', 300: '#265741', 400: '#337457', 500: '#40916c', 600: '#58b68b', 700: '#82c8a8', 800: '#abdac5', 900: '#d5ede2' }, 'air_force_blue': { DEFAULT: '#598392', 100: '#121a1d', 200: '#24343a', 300: '#354e57', 400: '#476874', 500: '#598392', 600: '#769dab', 700: '#99b6c0', 800: '#bbced5', 900: '#dde7ea' }, 'saffron': { DEFAULT: '#F9C74F', 100: '#3f2d02', 200: '#7e5a05', 300: '#bd8607', 400: '#f6b10f', 500: '#f9c74f', 600: '#fad171', 700: '#fbdc95', 800: '#fce8b8', 900: '#fef3dc' }, 'fire_engine_red': { DEFAULT: '#D90429', 100: '#2b0108', 200: '#560210', 300: '#810318', 400: '#ac0420', 500: '#d90429', 600: '#fa1b40', 700: '#fc5470', 800: '#fd8da0', 900: '#fec6cf' } }
+
+- CSV
+
+EFEFF0,686963,1D2F6F,A8DADC,40916C,598392,F9C74F,D90429
+
+- With #
+
+#EFEFF0, #686963, #1D2F6F, #A8DADC, #40916C, #598392, #F9C74F, #D90429
+
+- Array
+
+["EFEFF0","686963","1D2F6F","A8DADC","40916C","598392","F9C74F","D90429"]
+
+- Object
+
+{"Anti-flash white":"EFEFF0","Dim gray":"686963","Delft Blue":"1D2F6F","Non Photo blue":"A8DADC","Sea green":"40916C","Air Force blue":"598392","Saffron":"F9C74F","Fire engine red":"D90429"}
+
+- Extended Array
+
+[{"name":"Anti-flash white","hex":"EFEFF0","rgb":[239,239,240],"cmyk":[0,0,0,6],"hsb":[240,0,94],"hsl":[240,3,94],"lab":[94,0,0]},{"name":"Dim gray","hex":"686963","rgb":[104,105,99],"cmyk":[1,0,6,59],"hsb":[70,6,41],"hsl":[70,3,40],"lab":[44,-2,3]},{"name":"Delft Blue","hex":"1D2F6F","rgb":[29,47,111],"cmyk":[74,58,0,56],"hsb":[227,74,44],"hsl":[227,59,27],"lab":[22,17,-39]},{"name":"Non Photo blue","hex":"A8DADC","rgb":[168,218,220],"cmyk":[24,1,0,14],"hsb":[182,24,86],"hsl":[182,43,76],"lab":[84,-16,-6]},{"name":"Sea green","hex":"40916C","rgb":[64,145,108],"cmyk":[56,0,26,43],"hsb":[153,56,57],"hsl":[153,39,41],"lab":[54,-34,12]},{"name":"Air Force blue","hex":"598392","rgb":[89,131,146],"cmyk":[39,10,0,43],"hsb":[196,39,57],"hsl":[196,24,46],"lab":[52,-10,-13]},{"name":"Saffron","hex":"F9C74F","rgb":[249,199,79],"cmyk":[0,20,68,2],"hsb":[42,68,98],"hsl":[42,93,64],"lab":[83,6,64]},{"name":"Fire engine red","hex":"D90429","rgb":[217,4,41],"cmyk":[0,98,81,15],"hsb":[350,98,85],"hsl":[350,96,43],"lab":[46,71,43]}]
+
+- XML
+
+<palette>
+  <color name="Anti-flash white" hex="EFEFF0" r="239" g="239" b="240" />
+  <color name="Dim gray" hex="686963" r="104" g="105" b="99" />
+  <color name="Delft Blue" hex="1D2F6F" r="29" g="47" b="111" />
+  <color name="Non Photo blue" hex="A8DADC" r="168" g="218" b="220" />
+  <color name="Sea green" hex="40916C" r="64" g="145" b="108" />
+  <color name="Air Force blue" hex="598392" r="89" g="131" b="146" />
+  <color name="Saffron" hex="F9C74F" r="249" g="199" b="79" />
+  <color name="Fire engine red" hex="D90429" r="217" g="4" b="41" />
+</palette> */
