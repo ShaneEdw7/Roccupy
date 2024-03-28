@@ -1,6 +1,12 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Dashboard, IndexPage, Login } from "./pages";
+import {
+  Applications,
+  Dashboard,
+  IndexPage,
+  Login,
+  Maintenance,
+} from "./pages";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -20,6 +26,14 @@ const App = () => {
         {
           path: "index",
           element: <IndexPage />,
+        },
+        {
+          path: "Applications",
+          element: <Applications />,
+        },
+        {
+          path: "Maintenance",
+          element: <Maintenance />,
         },
       ],
     },

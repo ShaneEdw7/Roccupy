@@ -14,7 +14,7 @@ const Login = () => {
                 </label>
                 <input
                   type='email'
-                  placeholder='email'
+                  placeholder='you@yourdomain.com'
                   className='input input-bordered'
                   required
                 />
@@ -25,7 +25,7 @@ const Login = () => {
                 </label>
                 <input
                   type='password'
-                  placeholder='password'
+                  placeholder='P@ssW0rd'
                   className='input input-bordered'
                   required
                 />
