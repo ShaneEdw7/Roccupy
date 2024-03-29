@@ -10,7 +10,7 @@ const Sidebar = () => {
           htmlFor='my-drawer-2'
           className='btn btn-primary drawer-button lg:hidden'
         >
-          Open drawer
+          Sidebar
         </label>
       </div>
       <div className='drawer-side'>

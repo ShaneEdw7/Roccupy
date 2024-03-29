@@ -6,6 +6,7 @@ import {
   IndexPage,
   Login,
   Maintenance,
+  Properties,
 } from "./pages";
 
 const App = () => {
@@ -18,15 +19,21 @@ const App = () => {
         {
           path: "dashboard",
           element: <Dashboard />,
+          children: [
+            {
+              path: "properties",
+              element: <Properties />,
+            },
+          ],
         },
-        {
-          path: "properties",
-          element: <div>Properties</div>,
-        },
-        {
-          path: "index",
-          element: <IndexPage />,
-        },
+        // {
+        //   path: "properties",
+        //   element: <Properties />,
+        // },
+        // {
+        //   path: "index",
+        //   element: <IndexPage />,
+        // },
         {
           path: "Applications",
           element: <Applications />,

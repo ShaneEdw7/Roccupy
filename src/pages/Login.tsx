@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import JellyBeanRow from "../assets/images/jellybeanrowtest.jpg";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className='hero min-h-screen bg-base-200'>
@@ -36,10 +38,11 @@ const Login = () => {
                 </label>
               </div>
               <div className='form-control mt-6'>
-                <button className='btn btn-primary'>
-                  <Link to='/Dashboard'>
-                    <span>Login</span>
-                  </Link>
+                <button
+                  className='btn btn-primary'
+                  onClick={() => navigate("dashboard")}
+                >
+                  <span>Login</span>
                 </button>
               </div>
             </form>
