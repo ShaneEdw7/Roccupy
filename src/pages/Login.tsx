@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import JellyBeanRow from "../assets/images/jellybeanrowtest.jpg";
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div>
       <div className='hero min-h-screen bg-base-200'>
-        <div className='hero-content flex-row'>
+        <div className='hero-content flex-row space-x-12'>
           <div className='card shrink-0 max-w-md max-md shadow-2xl bg-base-100'>
             <form className='card-body'>
               <div className='form-control'>
@@ -40,17 +40,14 @@ const Login = () => {
               <div className='form-control mt-6'>
                 <button
                   className='btn btn-primary'
-                  onClick={() => navigate("dashboard")}
+                  onClick={() => navigate("../Dashboard")}
                 >
                   <span>Login</span>
                 </button>
               </div>
             </form>
           </div>
-          <img
-            src={JellyBeanRow}
-            className='flex h-screen w-1/2 rounded-lg shadow-2xl'
-          />
+          <img src={JellyBeanRow} className='flex h-screen w-1/2' />
         </div>
       </div>
     </div>
