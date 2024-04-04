@@ -1,50 +1,48 @@
 import Logo from "../assets/images/Logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   return (
-    <div className='drawer lg:drawer-open'>
-      <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
-      <div className='drawer-content flex flex-col items-center justify-center'>
-        {/* Page content here */}
-        <label
-          htmlFor='my-drawer-2'
-          className='btn btn-primary drawer-button lg:hidden'
-        >
-          Sidebar
-        </label>
+    <>
+      <div className='h-full flex-1 flex overflow-hidden'>
+        <nav className='narrow-sidebar hidden md:block lg:block lg:flex-shrink-0 lg:bg-gray-800 lg:overflow-y-auto'>
+          <div className='relative w-56 flex flex-col bg-base-200'>
+            <img
+              className='md:width={100} height={100} self-center'
+              src={Logo}
+              alt='Roccupy Logo'
+              width={125}
+              height={125}
+              onClick={() => navigate("/")}
+            />
+            <ul className='menu menu-lg bg-base-200 w-56'>
+              <li>
+                <a onClick={() => navigate("Properties")}>Properties</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Applications")}>Applications</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Accounts")}>Accounts</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Maintenance")}>Maintenance</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Communications")}>Communications</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Files")}>Files</a>
+              </li>
+              <li>
+                <a onClick={() => navigate("Reports")}>Reports</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <div className='drawer-side'>
-        <label
-          htmlFor='my-drawer-2'
-          aria-label='close sidebar'
-          className='drawer-overlay'
-        ></label>
-        <ul className='menu p-4 w-60 min-h-full bg-base-200 text-base-content'>
-          <img src={Logo} alt='Roccupy Logo' width={200} height={200} />
-          <li>
-            <a>Properties</a>
-          </li>
-          <li>
-            <a>Applications</a>
-          </li>
-          <li>
-            <a>Accounts</a>
-          </li>
-          <li>
-            <a>Maintenance</a>
-          </li>
-          <li>
-            <a>Communications</a>
-          </li>
-          <li>
-            <a>Files</a>
-          </li>
-          <li>
-            <a>Reports</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </>
   );
 };
 
