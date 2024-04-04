@@ -1,5 +1,7 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
   Applications,
   Dashboard,
@@ -7,7 +9,14 @@ import {
   Login,
   Maintenance,
   Properties,
+  Accounts,
+  Communications,
+  Files,
+  Reports,
 } from "./pages";
+import PropertyInputForm from "./components/PropertyInputForm";
+
+library.add(fas);
 
 const App = () => {
   const router = createBrowserRouter([
@@ -15,25 +24,26 @@ const App = () => {
       path: "/",
       element: <IndexPage />,
       errorElement: <div>Whoops</div>,
+    },
+    {
+      path: "/Login",
+      element: <Login />,
+      errorElement: <div>Whoops</div>,
+    },
+    {
+      path: "/Dashboard",
+      element: <Dashboard />,
       children: [
         {
-          path: "dashboard",
-          element: <Dashboard />,
+          path: "Properties",
+          element: <Properties />,
           children: [
             {
-              path: "properties",
-              element: <Properties />,
+              path: "PropertyInputForm",
+              element: <PropertyInputForm />,
             },
           ],
         },
-        // {
-        //   path: "properties",
-        //   element: <Properties />,
-        // },
-        // {
-        //   path: "index",
-        //   element: <IndexPage />,
-        // },
         {
           path: "Applications",
           element: <Applications />,
@@ -42,12 +52,23 @@ const App = () => {
           path: "Maintenance",
           element: <Maintenance />,
         },
+        {
+          path: "Accounts",
+          element: <Accounts />,
+        },
+        {
+          path: "Communications",
+          element: <Communications />,
+        },
+        {
+          path: "Files",
+          element: <Files />,
+        },
+        {
+          path: "Reports",
+          element: <Reports />,
+        },
       ],
-    },
-    {
-      path: "login",
-      element: <Login />,
-      errorElement: <div>Whoops</div>,
     },
   ]);
 
