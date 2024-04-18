@@ -1,14 +1,36 @@
+import { useForm, SubmitHandler } from "react-hook-form";
+import { ImageUrl } from "../types";
+
+type FormFields = {
+  coverPhoto: ImageUrl;
+  streetNumber: number;
+  streetAddress: string;
+  city: string;
+  province: string;
+  postalCode: string;
+  country: string;
+};
+
 const PropertyInputForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<FormFields>();
+  const onSubmit: SubmitHandler<FormFields> = async (data) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    localStorage.setItem("formData", JSON.stringify(data));
+  };
   return (
     <div>
       <h1 className='font-bold text-lg'>New Property</h1>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className='space-y-12'>
           <div className='border-b border-gray-900/10 pb-12'>
             <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6'>
               <div className='col-span-full'>
                 <label
-                  htmlFor='cover-photo'
+                  htmlFor='coverPhoto'
                   className='block text-sm font-medium leading-6 text-gray-900'
                 >
                   Cover photo
@@ -17,13 +39,14 @@ const PropertyInputForm = () => {
                   <div className='text-center'>
                     <div className='mt-4 flex text-sm leading-6 text-gray-600'>
                       <label
-                        htmlFor='file-upload'
+                        htmlFor='coverPhoto'
                         className='relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500'
                       >
                         <span>Upload a file</span>
                         <input
-                          id='file-upload'
-                          name='file-upload'
+                          {...register("coverPhoto")}
+                          id='coverPhoto'
+                          name='coverPhoto'
                           type='file'
                           className='sr-only'
                         />
@@ -47,19 +70,50 @@ const PropertyInputForm = () => {
             <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6'>
               <div className='col-span-full'>
                 <label
-                  htmlFor='street-address'
+                  htmlFor='streetNumber'
                   className='block text-sm font-medium leading-6 text-gray-900'
                 >
-                  Street address
+                  Street Number
                 </label>
                 <div className='mt-2'>
                   <input
-                    type='text'
-                    name='street-address'
-                    id='street-address'
-                    autoComplete='street-address'
+                    {...register("streetNumber", {
+                      required: "Please enter a number",
+                      minLength: 1,
+                    })}
+                    name='streetNumber'
+                    id='streetNumber'
                     className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
+                  {errors.streetNumber && (
+                    <div className='text-red-500'>
+                      {errors.streetNumber.message}
+                    </div>
+                  )}
+                </div>
+                <div className='col-span-full'>
+                  <label
+                    htmlFor='streetAddress'
+                    className='block text-sm font-medium leading-6 text-gray-900'
+                  >
+                    Street address
+                  </label>
+                  <div className='mt-2'>
+                    <input
+                      {...register("streetAddress", {
+                        required: "Field cannot be left empty",
+                      })}
+                      name='streetAddress'
+                      id='streetAddress'
+                      autoComplete='street-address'
+                      className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                    />
+                    {errors.streetAddress && (
+                      <div className='text-red-500'>
+                        {errors.streetAddress.message}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -72,48 +126,70 @@ const PropertyInputForm = () => {
                 </label>
                 <div className='mt-2'>
                   <input
+                    {...register("city", {
+                      required: "Field cannot be left empty",
+                    })}
                     type='text'
                     name='city'
                     id='city'
                     autoComplete='address-level2'
                     className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
+                  {errors.city && (
+                    <div className='text-red-500'>{errors.city.message}</div>
+                  )}
                 </div>
               </div>
 
               <div className='sm:col-span-2'>
                 <label
-                  htmlFor='region'
+                  htmlFor='province'
                   className='block text-sm font-medium leading-6 text-gray-900'
                 >
                   Province
                 </label>
                 <div className='mt-2'>
                   <input
+                    {...register("province", {
+                      required: "Field cannot be left empty",
+                    })}
                     type='text'
-                    name='region'
-                    id='region'
+                    name='province'
+                    id='province'
                     autoComplete='address-level1'
                     className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
+                  {errors.province && (
+                    <div className='text-red-500'>
+                      {errors.province.message}
+                    </div>
+                  )}
                 </div>
               </div>
 
               <div className='sm:col-span-2'>
                 <label
-                  htmlFor='postal-code'
+                  htmlFor='postalCode'
                   className='block text-sm font-medium leading-6 text-gray-900'
                 >
                   Postal code
                 </label>
                 <div className='mt-2'>
                   <input
+                    {...register("postalCode", {
+                      required: "Example: A0A 0A0",
+                    })}
                     type='text'
-                    name='postal-code'
-                    id='postal-code'
+                    name='postalCode'
+                    id='postalCode'
                     autoComplete='postal-code'
                     className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
                   />
+                  {errors.postalCode && (
+                    <div className='text-red-500'>
+                      {errors.postalCode.message}
+                    </div>
+                  )}
                 </div>
               </div>
               <div className='sm:col-span-3'>
@@ -125,6 +201,7 @@ const PropertyInputForm = () => {
                 </label>
                 <div className='mt-2'>
                   <select
+                    {...register("country")}
                     id='country'
                     name='country'
                     autoComplete='country-name'
@@ -143,14 +220,18 @@ const PropertyInputForm = () => {
           <button
             type='button'
             className='text-sm font-semibold leading-6 text-gray-900'
+            onClick={() =>
+              document.getElementById("PropertyInputForm").showModal()
+            }
           >
             Cancel
           </button>
           <button
             type='submit'
             className='rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+            disabled={isSubmitSuccessful}
           >
-            Save
+            {isSubmitSuccessful ? "Submitted" : "Submit"}
           </button>
         </div>
       </form>
