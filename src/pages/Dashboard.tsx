@@ -5,11 +5,11 @@ import Footer from "../components/Footer.tsx";
 const Dashboard = () => {
   return (
     <div>
-      <div className='flex flex-row'>
+      <div className='flex flex-row min-h-screen'>
         <div>
           <Sidebar />
         </div>
-        <div className='flex-1 h-screen ml-5'>
+        <div className='flex-grow'>
           <Outlet />
         </div>
       </div>

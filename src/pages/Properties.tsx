@@ -4,8 +4,8 @@ import PropertyInputForm from "../components/PropertyInputForm";
 const Properties = () => {
   return (
     <>
-      <div className='flex flex-row my-3 items-end'>
-        <div>
+      <div className='flex flex-col my-3'>
+        <div className='flex justify-end p-4'>
           <button
             className='btn'
             onClick={() =>
@@ -25,10 +25,7 @@ const Properties = () => {
         </div>
       </div>
       <div>
-        <div className='h-full grid grid-cols-2 gap-4'>
-          <PropertyCard />
-          <PropertyCard />
-          <PropertyCard />
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4 ml-4 my-4'>
           <PropertyCard />
         </div>
       </div>
