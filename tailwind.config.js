@@ -6,6 +6,6 @@ export default {
   },
   plugins: [require("daisyui", "@tailwindcss/forms")],
   daisyui: {
-    themes: ["light", "dark", "nord", "corporate"],
+    themes: ["light", "dark", "nord", "corporate", "winter", "autumn"],
   },
 };
