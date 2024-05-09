@@ -14,7 +14,8 @@ export type ImageUrl = string;
 //   length: number;
 // }
 
-export interface PropertyCard {
+export interface PropertyFace {
+  id: number;
   coverPhoto: ImageUrl;
   streetNumber: number;
   streetAddress: string;

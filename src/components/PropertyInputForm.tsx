@@ -1,7 +1,9 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ImageUrl } from "../types";
+import * as api from "../api";
 
 type FormFields = {
+  id: number;
   coverPhoto: ImageUrl;
   streetNumber: number;
   streetAddress: string;
@@ -17,9 +19,13 @@ const PropertyInputForm = () => {
     handleSubmit,
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormFields>();
-  const onSubmit: SubmitHandler<FormFields> = async (data) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    localStorage.setItem("formData", JSON.stringify(data));
+  const onSubmit: SubmitHandler<FormFields> = (data) => {
+    const propertiesStorage = api.saveProperty(data);
+    console.log(propertiesStorage);
+    /*
+    const propertyStorage = JSON.stringify(data);
+    localStorage.setItem("property", propertyStorage);
+    */
   };
   return (
     <div>

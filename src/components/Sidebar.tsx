@@ -1,12 +1,6 @@
 import Logo from "../assets/images/Logo.png";
 import { useNavigate } from "react-router-dom";
-import PropertyIcon from "./icons/PropertyIcon";
-import ApplicationsIcon from "./icons/ApplicationsIcon";
-import AccountsIcon from "./icons/AccountsIcon";
-import MaintenanceIcon from "./icons/MaintenanceIcon";
-import CommunicationsIcon from "./icons/CommunicationsIcon";
-import FilesIcon from "./icons/FilesIcon";
-import ReportsIcon from "./icons/ReportsIcon";
+import * as Icons from "./icons";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -26,43 +20,43 @@ const Sidebar = () => {
             <ul className='menu menu-lg bg-base-200 w-56'>
               <li>
                 <a onClick={() => navigate("Properties")}>
-                  <PropertyIcon />
+                  <Icons.PropertyIcon />
                   Properties
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Applications")}>
-                  <ApplicationsIcon />
+                  <Icons.ApplicationsIcon />
                   Applications
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Accounts")}>
-                  <AccountsIcon />
+                  <Icons.AccountsIcon />
                   Accounts
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Maintenance")}>
-                  <MaintenanceIcon />
+                  <Icons.MaintenanceIcon />
                   Maintenance
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Communications")}>
-                  <CommunicationsIcon />
+                  <Icons.CommunicationsIcon />
                   Communications
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Files")}>
-                  <FilesIcon />
+                  <Icons.FilesIcon />
                   Files
                 </a>
               </li>
               <li>
                 <a onClick={() => navigate("Reports")}>
-                  <ReportsIcon />
+                  <Icons.ReportsIcon />
                   Reports
                 </a>
               </li>

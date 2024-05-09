@@ -1,22 +1,28 @@
-import { Property } from "./types";
+import { PropertyFace } from "./types";
 
 enum StorageKeys {
-  Properties = "properties",
+  Properties = "propertiesStorage",
 }
 
-export async function saveProperty(property: Property) {
-  const properties = await getProperties();
-  properties.push(property);
-  localStorage.setItem(StorageKeys.Properties, JSON.stringify(properties));
+export async function saveProperty(property: PropertyFace) {
+  const propertiesStorage = await getProperties();
+  property.id = property.streetNumber;
+  propertiesStorage.push(property);
+  localStorage.setItem(
+    StorageKeys.Properties,
+    JSON.stringify(propertiesStorage)
+  );
 }
 
-export async function getProperties(): Promise<Property[]> {
+export async function getProperties(): Promise<PropertyFace[]> {
   return JSON.parse(localStorage.getItem(StorageKeys.Properties) ?? "[]");
 }
 
-export async function getProperty(id: number): Promise<Property | undefined> {
+export async function getProperty() {
   const properties = await getProperties();
-  return properties.find((property) => property?.id === id) ?? undefined;
+  return properties.forEach((property) => {
+    console.log(property.id, property);
+  });
 }
 
 // Optional chaining operator (".?") and null coalscing operator ("??")

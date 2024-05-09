@@ -35,6 +35,7 @@ const App = () => {
       element: <Dashboard />,
       children: [
         {
+          // .../properties/1
           path: "Properties",
           element: <Properties />,
           children: [
