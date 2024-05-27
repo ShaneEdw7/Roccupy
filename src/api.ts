@@ -6,7 +6,7 @@ enum StorageKeys {
 
 export async function saveProperty(property: PropertyFace) {
   const propertiesStorage = await getProperties();
-  property.id = property.streetNumber;
+  (property.id = property.streetNumber), property.streetAddress;
   propertiesStorage.push(property);
   localStorage.setItem(
     StorageKeys.Properties,

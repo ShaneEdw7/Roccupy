@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import RowHouses from "../assets/images/jellybeanrowtest.jpg";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";

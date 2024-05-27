@@ -13,12 +13,21 @@ import {
   Communications,
   Files,
   Reports,
+  PropertyInputForm,
+  PropertyDetails,
 } from "./pages";
-import PropertyInputForm from "./components/PropertyInputForm";
 
 library.add(fas);
 
+// /dashboard/properties/123-apple-st
+// /dashboard/properties/456-banana-st
+// /dashboard/properties/:propertyId
+
 const App = () => {
+  const handleFormSubmit = () => {
+    console.log("Form submitted successfully");
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -40,10 +49,14 @@ const App = () => {
           element: <Properties />,
           children: [
             {
-              path: "PropertyInputForm",
-              element: <PropertyInputForm />,
+              path: ":propertyId",
+              element: <PropertyDetails />,
             },
           ],
+        },
+        {
+          path: "PropertyInputForm",
+          element: <PropertyInputForm onFormSubmit={handleFormSubmit} />,
         },
         {
           path: "Applications",

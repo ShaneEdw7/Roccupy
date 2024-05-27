@@ -1,7 +1,9 @@
 import Dashboard from "./Dashboard.tsx";
 import Login from "./Login.tsx";
 import IndexPage from "./IndexPage.tsx";
-import Properties from "./Properties.tsx";
+import PropertiesPage from "./Properties.tsx";
+import PropertyInputForm from "./PropertyInputForm.tsx";
+import PropertyDetails from "./PropertyDetails.tsx";
 import Applications from "./Applications.tsx";
 import Maintenance from "./Applications.tsx";
 import Accounts from "./Accounts.tsx";
@@ -13,7 +15,9 @@ export {
   Dashboard,
   Login,
   IndexPage,
-  Properties,
+  PropertiesPage as Properties,
+  PropertyInputForm,
+  PropertyDetails,
   Applications,
   Maintenance,
   Accounts,

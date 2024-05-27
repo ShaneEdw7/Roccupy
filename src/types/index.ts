@@ -23,4 +23,15 @@ export interface PropertyFace {
   province: string;
   postalCode: string;
   country: string;
+  propertytype: string;
+  units: number;
+  price: number;
+  initialloan: number;
+  marketvalue: number;
+  loanpayment: number;
+  propertytax: number;
+  rent1: number;
+  rent2: number;
+  rent3: number;
+  rent4: number;
 }

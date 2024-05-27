@@ -1,36 +1,47 @@
+import { useEffect, useState } from "react";
 import PropertyCard from "../components/PropertyCard";
-import PropertyInputForm from "../components/PropertyInputForm";
+import { PropertyFace } from "../types";
+import * as api from "../api";
+import { useNavigate } from "react-router-dom";
 
-const Properties = () => {
+const PropertiesPage = () => {
+  const [properties, setProperties] = useState<PropertyFace[]>([]);
+  const navigate = useNavigate();
+
+  const getProperties = () => {
+    api.getProperties().then((data: PropertyFace[]) => {
+      setProperties(data);
+    });
+  };
+
+  useEffect(() => {
+    getProperties();
+  }, []);
+
   return (
     <>
       <div className='flex flex-col my-3'>
         <div className='flex justify-end p-4'>
           <button
             className='btn'
-            onClick={() =>
-              document.getElementById("PropertyInputForm").showModal()
-            }
+            // onClick={() =>
+            //   document.getElementById("PropertyInputForm").showModal()
+            // }
+            onClick={() => navigate("../PropertyInputForm")}
           >
             Add Property
           </button>
-          <dialog
-            id='PropertyInputForm'
-            className='modal modal-bottom md:modal-middle'
-          >
-            <div className='modal-box'>
-              <PropertyInputForm />
-            </div>
-          </dialog>
         </div>
       </div>
       <div>
         <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-4 ml-4 my-4'>
-          <PropertyCard />
+          {properties.map((property) => (
+            <PropertyCard property={property} />
+          ))}
         </div>
       </div>
     </>
   );
 };
 
-export default Properties;
+export default PropertiesPage;

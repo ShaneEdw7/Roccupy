@@ -1,29 +1,12 @@
-import * as api from "../api";
 import RowHouses from "../assets/images/jellybeanrowtest.jpg";
 import { PropertyFace } from "../types";
 
-const PropertyCard = () => {
-  /*
-  ** This works with one property in Storage ** 
+interface PropertyCardProps {
+  property: PropertyFace;
+}
 
-  const propertyString = localStorage.getItem("propertiesStorage");
-  const property = JSON.parse(propertyString);
-  console.log(property);
-*/
-  async function processData() {
-    const properties = await api.getProperties();
-    if (properties) {
-      const propertyObjects = [];
-      properties.forEach((property) => {
-        const newObject = { ...property };
-        propertyObjects.push(newObject);
-      });
-      console.log(propertyObjects);
-    } else {
-      console.log("No properties found.");
-    }
-  }
-  processData();
+const PropertyCard: React.FC<PropertyCardProps> = (props) => {
+  const property = props.property;
 
   return (
     <div>
@@ -39,10 +22,8 @@ const PropertyCard = () => {
             <p>{property.city}</p>
           </div>
           <div>
-            <p>Rent: {property.rent}</p>
-            <p>
-              Tenants: {property.tenant1} {property.tenant2}
-            </p>
+            <p>Rent: {property.rent1}</p>
+            <p>Property Type: {property.propertytype}</p>
           </div>
           <div>{property.id}</div>
           <div className='card-actions'>
