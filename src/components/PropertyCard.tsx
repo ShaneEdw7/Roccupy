@@ -1,5 +1,6 @@
 import RowHouses from "../assets/images/jellybeanrowtest.jpg";
 import { PropertyFace } from "../types";
+import { useNavigate } from "react-router-dom";
 
 interface PropertyCardProps {
   property: PropertyFace;
@@ -7,6 +8,11 @@ interface PropertyCardProps {
 
 const PropertyCard: React.FC<PropertyCardProps> = (props) => {
   const property = props.property;
+  const navigate = useNavigate();
+
+  const handleViewClick = () => {
+    navigate(`./${property.id}`);
+  };
 
   return (
     <div>
@@ -23,11 +29,13 @@ const PropertyCard: React.FC<PropertyCardProps> = (props) => {
           </div>
           <div>
             <p>Rent: {property.rent1}</p>
-            <p>Property Type: {property.propertytype}</p>
+            <p>{property.propertytype}</p>
           </div>
           <div>{property.id}</div>
           <div className='card-actions'>
-            <button className='btn btn-primary w-24'>View</button>
+            <button className='btn btn-primary w-24' onClick={handleViewClick}>
+              View
+            </button>
           </div>
         </div>
       </div>

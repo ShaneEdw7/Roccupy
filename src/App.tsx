@@ -44,15 +44,12 @@ const App = () => {
       element: <Dashboard />,
       children: [
         {
-          // .../properties/1
           path: "Properties",
           element: <Properties />,
-          children: [
-            {
-              path: ":propertyId",
-              element: <PropertyDetails />,
-            },
-          ],
+        },
+        {
+          path: "property/:id",
+          element: <PropertyDetails />,
         },
         {
           path: "PropertyInputForm",

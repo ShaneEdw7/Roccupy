@@ -6,7 +6,7 @@ enum StorageKeys {
 
 export async function saveProperty(property: PropertyFace) {
   const propertiesStorage = await getProperties();
-  (property.id = property.streetNumber), property.streetAddress;
+  property.id = propertiesStorage.length + 1;
   propertiesStorage.push(property);
   localStorage.setItem(
     StorageKeys.Properties,
@@ -18,12 +18,17 @@ export async function getProperties(): Promise<PropertyFace[]> {
   return JSON.parse(localStorage.getItem(StorageKeys.Properties) ?? "[]");
 }
 
-export async function getProperty() {
+export async function getProperty(): Promise<PropertyFace[]> {
   const properties = await getProperties();
-  return properties.forEach((property) => {
+  properties.forEach((property) => {
     console.log(property.id, property);
   });
+  return properties;
 }
 
-// Optional chaining operator (".?") and null coalscing operator ("??")
-// const obj = foo?.bar?.baz ?? false
+export async function getPropertyById(
+  id: number
+): Promise<PropertyFace | undefined> {
+  const properties = await getProperties();
+  return properties.find((property: PropertyFace) => property.id === id);
+}

@@ -44,6 +44,7 @@ const PropertyInputForm: React.FC<PropertyInputFormProps> = (props) => {
   };
 
   const navigate = useNavigate();
+  const today = new Date();
 
   return (
     <>
@@ -255,6 +256,12 @@ const PropertyInputForm: React.FC<PropertyInputFormProps> = (props) => {
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
                     </select>
                     {errors.units && (
                       <div className='text-red-500'>{errors.units.message}</div>
