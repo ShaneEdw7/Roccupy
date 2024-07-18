@@ -44,7 +44,7 @@ const PropertyInputForm: React.FC<PropertyInputFormProps> = (props) => {
   };
 
   const navigate = useNavigate();
-  const today = new Date();
+  if (isSubmitSuccessful) navigate(-1);
 
   return (
     <>
@@ -56,6 +56,12 @@ const PropertyInputForm: React.FC<PropertyInputFormProps> = (props) => {
               <h2 className='text-xl font-semibold leading-7 text-gray-900'>
                 Property Details
               </h2>
+              <div>
+                <input
+                  type='file'
+                  className='file-input file-input-bordered w-full max-w-xs'
+                />
+              </div>
 
               <div className='mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-6'>
                 <div className='sm:col-span-1 sm:col-start-1'>

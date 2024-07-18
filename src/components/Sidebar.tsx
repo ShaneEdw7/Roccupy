@@ -61,6 +61,38 @@ const Sidebar = () => {
                 </a>
               </li>
             </ul>
+            <hr className='w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700'></hr>
+            <div className='dropdown dropdown-top self-center'>
+              <div
+                tabIndex={0}
+                role='button'
+                className='btn btn-ghost btn-circle avatar'
+              >
+                <div className='w-10 rounded-full'>
+                  <img
+                    alt='Tailwind CSS Navbar component'
+                    src='https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+                  />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+              >
+                <li>
+                  <a className='justify-between'>
+                    Profile
+                    <span className='badge'>New</span>
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a>Logout</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>

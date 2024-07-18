@@ -1,6 +1,6 @@
 const InputFormHeader = () => {
   return (
-    <div className='flex items-left bg-slate-50 p-4'>
+    <div className='flex items-left p-4'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         fill='none'

@@ -11,7 +11,8 @@ const PropertyCard: React.FC<PropertyCardProps> = (props) => {
   const navigate = useNavigate();
 
   const handleViewClick = () => {
-    navigate(`./${property.id}`);
+    // navigate(`./${property.id}`);
+    navigate(`../property/${property.id}`);
   };
 
   return (
