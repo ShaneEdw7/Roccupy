@@ -24,9 +24,6 @@ const PropertiesPage = () => {
         <div className='flex justify-end p-4'>
           <button
             className='btn'
-            // onClick={() =>
-            //   document.getElementById("PropertyInputForm").showModal()
-            // }
             onClick={() => navigate("../PropertyInputForm")}
           >
             Add Property

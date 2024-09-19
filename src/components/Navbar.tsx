@@ -13,6 +13,9 @@ const Navbar = () => {
         <div className='flex-none'>
           <ul className='menu menu-horizontal px-1'>
             <li>
+              <a onClick={() => navigate("")}>Browse Properties</a>
+            </li>
+            <li>
               <a onClick={() => navigate("Login")}>Sign In</a>
             </li>
           </ul>

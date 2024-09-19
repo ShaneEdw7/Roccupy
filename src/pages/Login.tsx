@@ -37,6 +37,13 @@ const Login = () => {
                   </a>
                 </label>
               </div>
+              <select className='select select-bordered w-full max-w-xs'>
+                <option disabled selected>
+                  Tenant or Landlord?
+                </option>
+                <option>Tenant</option>
+                <option>Landlord</option>
+              </select>
               <div className='form-control mt-6'>
                 <button
                   className='btn btn-primary'
